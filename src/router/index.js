@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../components/Index.vue'
+import store from '../store/index'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,19 @@ const routes = [
     path: '/login',
     name: 'Index',
     component: Index
+  },
+  {
+    path: '/list',
+    name: 'List',
+    component: () => import(/* webpackChunkName: "List" */ '../components/List.vue'),
+    beforeEnter: (to, from, next) => {
+      if(store.getters.isUserAuthenticated) {
+        next();
+      }
+      else {
+        next('/login');
+      }
+    }
   },
   { path: '*', redirect: '/login' }
   // {
