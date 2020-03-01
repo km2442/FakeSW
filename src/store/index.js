@@ -40,7 +40,7 @@ export default new Vuex.Store({
         commit('setLoginError');
       }
     },
-    logout(commit) {
+    logout({commit}) {
       commit('clearAuthData');
       router.replace('/login');
     }
