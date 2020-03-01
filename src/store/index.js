@@ -35,7 +35,7 @@ export default new Vuex.Store({
   },
   actions: {
     login ({commit}, authData) {
-      if(authData.login === "luke" && authData.pass === "123") {
+      if(authData.login === "Luke" && authData.pass === "123") {
         commit('authUser', { login: authData.login });
         commit('resetLoginError');
         router.replace('/list');

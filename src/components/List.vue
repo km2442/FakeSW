@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import Planets from "./Planets";
-import People from "./People";
+var Planets = () => import(/* webpackChunkName: "Planets" */ './Planets')
+var People = () => import(/* webpackChunkName: "People" */ './People')
 export default {
   components: { Planets, People },
   data: () => ({
