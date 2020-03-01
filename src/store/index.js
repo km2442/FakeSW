@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import router from '../router/index'
-//import axios from 'axios'
 
 Vue.use(Vuex)
-/* eslint-disable no-unused-vars */
 export default new Vuex.Store({
   state: {
     loginError: false,
@@ -27,10 +25,16 @@ export default new Vuex.Store({
     },
     resetLoginError(state) {
       state.loginError = false;
+    },
+    setPlanetsData(state, payload) {
+      state.planets = payload;
+    },
+    setPeopleData(state, payload) {
+      state.people = payload;
     }
   },
   actions: {
-    login ({commit, dispatch}, authData) {
+    login ({commit}, authData) {
       if(authData.login === "luke" && authData.pass === "123") {
         commit('authUser', { login: authData.login });
         commit('resetLoginError');
@@ -54,6 +58,12 @@ export default new Vuex.Store({
     },
     isLoginError(state) {
       return state.loginError !== false;
+    },
+    planets(state) {
+      return state.planets;
+    },
+    people(state) {
+      return state.people;
     }
   },
   modules: {

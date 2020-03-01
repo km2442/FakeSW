@@ -13,9 +13,6 @@ import Navbar from "./components/Navbar";
 import ThemeChanger from "./components/ThemeChanger";
 export default {
   name: "App",
-  components: { ThemeChanger, Navbar },
-  data: () => ({
-    //
-  })
+  components: { ThemeChanger, Navbar }
 };
 </script>
