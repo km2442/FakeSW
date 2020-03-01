@@ -7,6 +7,22 @@
           <v-icon left>mdi-logout</v-icon>
           Wyloguj
       </v-btn>
+      <v-hover v-slot:default="{ hover }">
+      <v-btn
+        :light="$vuetify.theme.dark ? false : true"
+        :dark="$vuetify.theme.dark ? true : false"
+        :outlined="hover ? false : true"
+        :color="$vuetify.theme.dark ? 'white' : 'black'"
+        icon
+        depressed
+        @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+      >
+        <v-icon
+          x-large
+          :color="hover ? $vuetify.theme.dark ? 'black' : 'white' : $vuetify.theme.dark ? 'white' : 'black'"
+        >mdi-brightness-6</v-icon>
+      </v-btn>
+    </v-hover>
     </v-app-bar>
   </div>
 </template>
