@@ -37,8 +37,7 @@
                 <v-btn
                   large
                   block
-                  color="primary"
-                  :outlined="hover ? false : true"
+                  :color="hover ? 'success' : 'primary'"
                   @click="loginUser()"
                 >Wyślij</v-btn>
               </v-hover>

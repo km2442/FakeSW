@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p class="display-1 text-center my-2" v-if="loading">Ładowanie danych...</p>
     <v-card v-if="!loading" class="my-2">
       <v-text-field
         v-model="search"
