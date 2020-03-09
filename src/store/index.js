@@ -9,7 +9,11 @@ export default new Vuex.Store({
     login: null,
     token: null,
     planets: [],
-    people: []
+    people: [],
+    movies: [],
+    species: [],
+    starships: [],
+    vehicles: []
   },
   mutations: {
     authUser(state, userData) {
@@ -31,6 +35,18 @@ export default new Vuex.Store({
     },
     setPeopleData(state, payload) {
       state.people = payload;
+    },
+    setMoviesData(state, payload) {
+      state.movies = payload;
+    },
+    setSpeciesData(state, payload) {
+      state.species = payload;
+    },
+    setStarshipsData(state, payload) {
+      state.starships = payload;
+    },
+    setVehiclesData(state, payload) {
+      state.vehicles = payload;
     }
   },
   actions: {
@@ -64,6 +80,18 @@ export default new Vuex.Store({
     },
     people(state) {
       return state.people;
+    },
+    movies(state) {
+      return state.movies;
+    },
+    species(state) {
+      return state.species;
+    },
+    starships(state) {
+      return state.starships;
+    },
+    vehicles(state) {
+      return state.vehicles;
     }
   },
   modules: {
