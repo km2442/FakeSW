@@ -30,38 +30,227 @@
 
     <v-tabs-items v-model="tab">
       <v-tab-item value="tab-1">
-        <Movies />
+        <TabList :headers="headers.moviesHeaders" data-name="Films" />
       </v-tab-item>
       <v-tab-item value="tab-2">
-        <Planets />
+        <TabList :headers="headers.planetsHeaders" data-name="Planets" />
       </v-tab-item>
       <v-tab-item value="tab-3">
-        <People />
+        <TabList :headers="headers.peopleHeaders" data-name="People" />
       </v-tab-item>
       <v-tab-item value="tab-4">
-        <Species />
+        <TabList :headers="headers.speciesHeaders" data-name="Species" />
       </v-tab-item>
       <v-tab-item value="tab-5">
-        <Starships />
+        <TabList :headers="headers.starshipsHeaders" data-name="Starships" />
       </v-tab-item>
       <v-tab-item value="tab-6">
-        <Vehicles />
+        <TabList :headers="headers.vehiclesHeaders" data-name="Vehicles" />
       </v-tab-item>
     </v-tabs-items>
   </div>
 </template>
 
 <script>
-var Movies = () => import(/* webpackChunkName: "Movies" */ './Movies')
-var Planets = () => import(/* webpackChunkName: "Planets" */ './Planets')
-var People = () => import(/* webpackChunkName: "People" */ './People')
-var Species = () => import(/* webpackChunkName: "Species" */ './Species')
-var Starships = () => import(/* webpackChunkName: "Starships" */ './Starships')
-var Vehicles = () => import(/* webpackChunkName: "Vehicles" */ './Vehicles')
+import TabList from "./TabList";
 export default {
-  components: { Movies, Planets, People, Species, Starships, Vehicles },
+  components: { TabList },
   data: () => ({
-    tab: null
+    tab: null,
+    headers: {
+      moviesHeaders: [
+        {
+          text: "Część",
+          align: "start",
+          sortable: true,
+          value: "episode_id"
+        },
+        {
+          text: "Tytuł",
+          value: "title"
+        },
+        {
+          text: "Reżyser",
+          value: "director"
+        },
+        {
+          text: "Producent",
+          value: "producer"
+        },
+        {
+          text: "Data premiery",
+          value: "release_date"
+        }
+      ],
+      planetsHeaders: [
+        {
+          text: "Nazwa",
+          align: "start",
+          sortable: true,
+          value: "name"
+        },
+        {
+          text: "Średnica",
+          value: "diameter"
+        },
+        {
+          text: "Czas obiegu wokół słońca",
+          value: "orbital_period"
+        },
+        {
+          text: "Czas obrotu wokół własnej osi",
+          value: "rotation_period"
+        },
+        {
+          text: "Populacja",
+          value: "population"
+        }
+      ],
+      peopleHeaders: [
+        {
+          text: "Nazwa",
+          align: "start",
+          sortable: true,
+          value: "name"
+        },
+        {
+          text: "Wzrost",
+          value: "height"
+        },
+        {
+          text: "Waga",
+          value: "mass"
+        },
+        {
+          text: "Kolor włosów",
+          value: "hair_color"
+        },
+        {
+          text: "Kolor skóry",
+          value: "skin_color"
+        },
+        {
+          text: "Kolor oczu",
+          value: "eye_color"
+        }
+      ],
+      speciesHeaders: [
+        {
+          text: "Nazwa",
+          align: "start",
+          sortable: true,
+          value: "name"
+        },
+        {
+          text: "Typ",
+          value: "classification"
+        },
+        {
+          text: "Średnia wysokość",
+          value: "average_height"
+        },
+        {
+          text: "Średnia długość życia",
+          value: "average_lifespan"
+        },
+        {
+          text: "Kolor oczu",
+          value: "eye_colors"
+        },
+        {
+          text: "Kolor włosów",
+          value: "hair_colors"
+        },
+        {
+          text: "Kolor skóry",
+          value: "skin_colors"
+        },
+        {
+          text: "Język",
+          value: "language"
+        }
+      ],
+      starshipsHeaders: [
+        {
+          text: "Nazwa",
+          align: "start",
+          sortable: true,
+          value: "name"
+        },
+        {
+          text: "Typ",
+          value: "classification"
+        },
+        {
+          text: "Średnia wysokość",
+          value: "average_height"
+        },
+        {
+          text: "Średnia długość życia",
+          value: "average_lifespan"
+        },
+        {
+          text: "Kolor oczu",
+          value: "eye_colors"
+        },
+        {
+          text: "Kolor włosów",
+          value: "hair_colors"
+        },
+        {
+          text: "Kolor skóry",
+          value: "skin_colors"
+        },
+        {
+          text: "Język",
+          value: "language"
+        }
+      ],
+      vehiclesHeaders: [
+        {
+          text: "Nazwa",
+          align: "start",
+          sortable: true,
+          value: "name"
+        },
+        {
+          text: "Typ",
+          value: "model"
+        },
+        {
+          text: "Klasa pojazdu",
+          value: "vehicle_class"
+        },
+        {
+          text: "Producent",
+          value: "manufacturer"
+        },
+        {
+          text: "Koszt w kredytach",
+          value: "cost_in_credits"
+        },
+        {
+          text: "Długość",
+          value: "length"
+        },
+        {
+          text: "Załoga",
+          value: "crew"
+        },
+        {
+          text: "Pasażerowie",
+          value: "passengers"
+        },
+        {
+          text: "Prędkość w atmosferze",
+          value: "max_atmosphering_speed"
+        },
+        {
+          text: "Pojemność ladunku",
+          value: "cargo_capacity"
+        }
+      ]
+    }
   })
 };
 </script>

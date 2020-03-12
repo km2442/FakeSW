@@ -36,7 +36,7 @@ export default new Vuex.Store({
     setPeopleData(state, payload) {
       state.people = payload;
     },
-    setMoviesData(state, payload) {
+    setFilmsData(state, payload) {
       state.movies = payload;
     },
     setSpeciesData(state, payload) {
@@ -75,22 +75,22 @@ export default new Vuex.Store({
     isLoginError(state) {
       return state.loginError !== false;
     },
-    planets(state) {
+    Planets(state) {
       return state.planets;
     },
-    people(state) {
+    People(state) {
       return state.people;
     },
-    movies(state) {
+    Films(state) {
       return state.movies;
     },
-    species(state) {
+    Species(state) {
       return state.species;
     },
-    starships(state) {
+    Starships(state) {
       return state.starships;
     },
-    vehicles(state) {
+    Vehicles(state) {
       return state.vehicles;
     }
   },
