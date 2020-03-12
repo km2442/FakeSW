@@ -179,31 +179,43 @@ export default {
         },
         {
           text: "Typ",
-          value: "classification"
+          value: "model"
         },
         {
-          text: "Średnia wysokość",
-          value: "average_height"
+          text: "Klasa statku",
+          value: "starship_class"
         },
         {
-          text: "Średnia długość życia",
-          value: "average_lifespan"
+          text: "Producent",
+          value: "manufacturer"
         },
         {
-          text: "Kolor oczu",
-          value: "eye_colors"
+          text: "Koszt w kredytach",
+          value: "cost_in_credits"
         },
         {
-          text: "Kolor włosów",
-          value: "hair_colors"
+          text: "Długość",
+          value: "length"
         },
         {
-          text: "Kolor skóry",
-          value: "skin_colors"
+          text: "Załoga",
+          value: "crew"
         },
         {
-          text: "Język",
-          value: "language"
+          text: "Pasażerowie",
+          value: "passengers"
+        },
+        {
+          text: "Prędkość w atmosferze",
+          value: "max_atmosphering_speed"
+        },
+        {
+          text: "Klasa napędu nadświetlnego",
+          value: "hyperdrive_rating"
+        },
+        {
+          text: "Pojemność ladunku",
+          value: "cargo_capacity"
         }
       ],
       vehiclesHeaders: [
