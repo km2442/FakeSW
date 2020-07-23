@@ -6,7 +6,12 @@
           <v-card-title>Zaloguj się</v-card-title>
           <v-card-text>
             <v-form>
-              <v-text-field label="Login" prepend-icon="mdi-account" type="text" v-model="login"></v-text-field>
+              <v-text-field
+                label="Login"
+                prepend-icon="mdi-account"
+                type="text"
+                v-model="login"
+              ></v-text-field>
               <v-text-field
                 label="Hasło"
                 prepend-icon="mdi-lock"
@@ -33,9 +38,18 @@
           </v-alert>
           <v-card-actions>
             <v-hover v-slot:default="{ hover }">
-              <v-btn large block :color="hover ? 'success' : 'primary'" @click="loginUser()">Wyślij</v-btn>
+              <v-btn
+                large
+                block
+                :color="hover ? 'success' : 'primary'"
+                @click="loginUser()"
+                >Wyślij</v-btn
+              >
             </v-hover>
           </v-card-actions>
+          <v-alert type="info" class="mx-2 mt-0 mb-2" prominent>
+            Dane do logowania:<br/>Luke:123
+          </v-alert>
         </v-card>
       </v-flex>
     </v-layout>
@@ -46,12 +60,12 @@
 export default {
   data: () => ({
     login: null,
-    password: null
+    password: null,
   }),
   computed: {
     isError() {
       return this.$store.getters.isLoginError;
-    }
+    },
   },
   methods: {
     loginUser() {
@@ -59,7 +73,7 @@ export default {
     },
     dismisLoginError() {
       this.$store.commit("resetLoginError");
-    }
-  }
+    },
+  },
 };
 </script>
