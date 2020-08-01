@@ -24,7 +24,7 @@ export default {
   methods: {
     async getData() {
       let data = [];
-      let next = "https://swapi.co/api/" + this.dataName.toLowerCase() + "/";
+      let next = "https://swapi.dev/api/" + this.dataName.toLowerCase() + "/";
 
       while (next) {
         const res = await this.getNextData(next);
