@@ -1,9 +1,9 @@
 <template>
   <div>
-    <v-app-bar color="primary">
+    <v-app-bar dark color="primary">
       <v-toolbar-title class="display-1 font-weight-black">Fake SW</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text v-if="isAuth" @click="logout()">
+      <v-btn large text v-if="isAuth" @click="logout()">
         <v-icon left>mdi-logout</v-icon>Wyloguj
       </v-btn>
       <v-hover v-slot:default="{ hover }">
@@ -11,13 +11,13 @@
           :light="$vuetify.theme.dark ? false : true"
           :dark="$vuetify.theme.dark ? true : false"
           :outlined="hover ? false : true"
-          :color="$vuetify.theme.dark ? 'white' : 'black'"
+          :color="$vuetify.theme.dark ? 'black' : 'white'"
           icon
           depressed
           @click="$vuetify.theme.dark = !$vuetify.theme.dark"
         >
           <v-icon
-            :color="hover ? $vuetify.theme.dark ? 'black' : 'white' : $vuetify.theme.dark ? 'white' : 'black'"
+            :color="hover ? $vuetify.theme.dark ? 'white' : 'black' : $vuetify.theme.dark ? 'black' : 'white'"
           >mdi-brightness-6</v-icon>
         </v-btn>
       </v-hover>
