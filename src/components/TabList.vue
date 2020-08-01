@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     dataGetter() {
-      return this.$store.getters[ this.dataName ];
+      return this.$store.getters[this.dataName];
     }
   },
   methods: {
@@ -45,6 +45,8 @@ export default {
 
       data = res.data.results;
       newNext = res.data.next;
+      if (newNext && !newNext.startsWith("https") && newNext.startsWith("http"))
+        newNext = [newNext.slice(0, 4), "s", newNext.slice(4)].join("");
 
       return { data: data, next: newNext };
     }
